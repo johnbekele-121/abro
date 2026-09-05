@@ -1,0 +1,5 @@
+*.md
+*.yml
+*.yaml
+package-lock.json
+.backlog/

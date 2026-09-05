@@ -83,6 +83,12 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: prettier
+        run: npm run format:check
 
       - name: markdownlint
         run: npx --yes markdownlint-cli2@0.23.2 "**/*.md" "!**/node_modules/**"
